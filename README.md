@@ -6,7 +6,7 @@ An end-to-end Anti-Money Laundering (AML) transaction monitoring pipeline built 
 
 ## Architecture
 
-generate_data.py → score_transactions.py → PostgreSQL → generate_narratives.py → generate_report.py → sar_report.xlsx
+![AML Pipeline Architecture](assets/architecture.png)
 
 ---
 
