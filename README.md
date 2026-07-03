@@ -51,3 +51,41 @@ An end-to-end Anti-Money Laundering (AML) transaction monitoring pipeline built 
 ## Setup
 
 **1. Clone the repo**
+
+**2. Create and activate virtual environment**
+python -m venv venv
+venv\Scripts\activate
+
+**3. Install dependencies**
+pip install pandas psycopg2-binary anthropic openpyxl scikit-learn python-dotenv
+
+**4. Create a `.env` file in the project root**
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=aml_pipeline
+DB_USER=postgres
+DB_PASSWORD=your_password
+ANTHROPIC_API_KEY=your_api_key
+
+**5. Set up PostgreSQL**
+
+Create the database and transactions table by connecting to PostgreSQL and running the schema in `db_setup.sql` (or manually via psql).
+
+**6. Run the pipeline**
+python src/generate_data.py
+python src/score_transaction.py
+python src/generate_narratives.py
+python src/generate_report.py
+
+---
+
+## Output
+
+The final SAR report is available in `output/sar_report.xlsx`. Each flagged transaction includes a Claude API-generated narrative referencing the AML/CTF Act 2006 and AUSTRAC obligations.
+
+---
+
+## Disclaimer
+
+All transaction data is synthetically generated. No real customer information was used in this project.
+
