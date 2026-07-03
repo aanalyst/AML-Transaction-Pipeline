@@ -6,7 +6,7 @@ An end-to-end Anti-Money Laundering (AML) transaction monitoring pipeline built 
 
 ## Architecture
 
-![AML Pipeline Architecture](assets/architecture.png)
+![AML Pipeline Architecture](https://raw.githubusercontent.com/aanalyst/AML-Transaction-Pipeline/main/assets/architecture.png)
 
 ---
 
